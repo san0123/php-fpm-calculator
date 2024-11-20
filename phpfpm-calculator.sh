@@ -28,7 +28,7 @@ for b in nginx httpd apache2 mariadbd mysqld php-fpm
   PROCESS=$(ps --no-headers -o command axc | grep $b | uniq)
   if [[ ! -z $PROCESS ]];then
     PssCheck
-    echo "$PROCESS used $(awk '{printf "%0.1f", $1/1024}' <<< $CONSUME)MB"
+    echo "$PROCESS used $(awk '{printf "%0.1f", $1/1024}' <<< $CONSUME) MB"
     if [[ $b == "php-fpm" ]];then PHPMEM=$CONSUME;fi
   fi
   done
