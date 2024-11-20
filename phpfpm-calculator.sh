@@ -45,13 +45,14 @@ echo -e $TearOff
 CHILD=$(ps --no-headers --sort -size -o size,command -C php-fpm | \
           awk '!/master process/{x+=$1;l+=1}END{print int(x/l)}' 2>/dev/null)
 if [[ -z $CHILD ]];then
-  CHILD=46080
+  CHILD=19087
+  echo there are php-fpm process non exist. so child set use 18.6M fixed.
 else
   ps --no-headers --sort -size -o size,command -C php-fpm | \
      awk '{printf("%0.2f MB ", $1/1024)}{for(x=2;x<=NF;x++){printf("%s ", $x)}print ""}'
-  echo -e "\e[32;1mphp-fpm child average memory usage $(awk '{printf "%0.1f", $1/1024}' <<< $CHILD)M\e[0m"
-  echo -e $TearOff
 fi
+echo -e "\e[32;1mphp-fpm child average memory usage $(awk '{printf "%0.1f", $1/1024}' <<< $CHILD)M\e[0m"
+echo -e $TearOff
 echo "$DEVIDE site use to $(awk '{printf "%0.1f", $1/1024}' <<< $USETO)M memory per each."
 echo -e $TearOff
 PER_MEMORY=$(awk '{print int($1/$2/1024)}' <<< "$USETO $DEVIDE")
