@@ -12,7 +12,7 @@
 > ~]# bash php-fpm-calculator.sh 3
 > ```
 
-### 예제 결과 값. (메모리 2GB)
+### 예제 결과 값. (메모리 2GB / 1개 pool)
 > ```bash
 > -----------------------------------------
 >           TOTAL   USED    BUFF    FREE
