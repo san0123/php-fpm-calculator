@@ -57,7 +57,7 @@ echo -e $TearOff
 PER_MEMORY=$(awk '{print int($1/$2/1024)}' <<< "$USETO $DEVIDE")
 MIN_SPARE=$(awk '{print int($1/($2/1024)*0.25)}' <<< "$PER_MEMORY $CHILD")
 MAX_SPARE=$(awk '{print int($1/($2/1024)*0.75)}' <<< "$PER_MEMORY $CHILD")
-START_SERVER=$(awk '{print int(($1+($2-$1))/2)}' <<< "$MIN_SPARE $MAX_SPARE")
+START_SERVER=$(awk '{print int($1+($2-$1)/2)}' <<< "$MIN_SPARE $MAX_SPARE")
 MAX_CHILD=$(awk '{print int($1/($2/1024))}' <<< "$PER_MEMORY $CHILD")
 if [[ $MIN_SPARE -le 1 ]];then MIN_SPARE=1;fi
 if [[ $MAX_SPARE -le 3 ]];then MAX_SPARE=3;fi
