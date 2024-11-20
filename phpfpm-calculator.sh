@@ -23,7 +23,7 @@ printf "%-9s %-7s %-7s %-7s %-7s\n" "" "TOTAL" "USED" "BUFF" "FREE"
 echo -e $TearOff
 printf "%-9s %-7s %-7s %-7s %-7s\n" "MEMORY" "$(awk '{printf "%0.0f", $1/1024}' <<< $RAMTOTAL)M" "$(awk '{printf "%0.0f", $1/1024}' <<< $RAMUSED)M" "$(awk '{printf "%0.0f", $1/1024}' <<< $RAMBUFF)M" "$(awk '{printf "%0.0f", $1/1024}' <<< $RAMFREE)M"
 echo -e $TearOff
-for b in nginx httpd mariadbd mysqld php-fpm
+for b in nginx httpd apache2 mariadbd mysqld php-fpm
   do
   PROCESS=$(ps --no-headers -o command xc | grep $b | uniq)
   if [[ ! -z $PROCESS ]];then
