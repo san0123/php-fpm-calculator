@@ -52,4 +52,4 @@
 > pm.max_requests                 = 500
 > -----------------------------------------
 > ```
-> 결과 값을 pool 파일에 반영 합니다. `/etc/php-fpm.d/xxx.conf` 
+> 결과 값을 pool 파일에 반영 합니다. `/etc/php-fpm.d/www.conf` 
