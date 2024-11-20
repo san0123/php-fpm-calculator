@@ -25,7 +25,7 @@ printf "%-9s %-7s %-7s %-7s %-7s\n" "MEMORY" "$(awk '{printf "%0.0f", $1/1024}' 
 echo -e $TearOff
 for b in nginx httpd apache2 mariadbd mysqld php-fpm
   do
-  PROCESS=$(ps --no-headers -o command xc | grep $b | uniq)
+  PROCESS=$(ps --no-headers -o command axc | grep $b | uniq)
   if [[ ! -z $PROCESS ]];then
     PssCheck
     echo "$PROCESS used $(awk '{printf "%0.1f", $1/1024}' <<< $CONSUME)MB"
