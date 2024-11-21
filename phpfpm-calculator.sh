@@ -43,7 +43,7 @@ echo -n "Memory_10%($(awk '{printf "%0.1f", $1/10/1024/1024}' <<< $RAMTOTAL)G) =
 echo "$(awk '{printf "%0.1f", ($1+$2+$3-($4/10))/1024/1024}' <<< "$RAMFREE $RAMBUFF $PHPMEM $RAMTOTAL")G"
 echo -e $TearOff
 PROCESS=$(ps --no-headers -o command xc | grep php-fpm | uniq)
-CHILD=$(ps --no-headers --sort -size -o size,command -C $PROCESS | \
+CHILD=$(ps --no-headers --sort -size -o size,command -C $PROCESS 2>/dev/null | \
           awk '!/master process/{x+=$1;l+=1}END{print int(x/l)}' 2>/dev/null)
 if [[ -z $CHILD ]];then
   CHILD=19087
