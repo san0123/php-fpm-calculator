@@ -17,9 +17,11 @@
 > ~]# cd /opt
 > ~]# git clone https://github.com/san0123/php-fpm-calculator
 > ~]# cd php-fpm-calculator
-> ~]# bash php-fpm-calculator.sh 1
+> ~]# chmod 700 php-fpm-calculator.sh
+> 
+> ~]# ./php-fpm-calculator.sh 1
 >
-> ~]# bash php-fpm-calculator.sh 3
+> ~]# ./php-fpm-calculator.sh 3
 > ```
 
 ### 예제 결과 값. (메모리 2GB / 1개 pool)
