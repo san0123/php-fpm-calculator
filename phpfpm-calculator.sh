@@ -55,7 +55,7 @@ echo -e "\e[32;1mphp-fpm child average memory usage $(awk '{printf "%0.1f", $1/1
 echo -e $TearOff
 echo "$DEVIDE site use to $(awk '{printf "%0.1f", $1/1024}' <<< $USETO)M memory per each."
 echo -e $TearOff
-PER_MEMORY=$(awk '{print int($1/$2/1024)}' <<< "$USETO $DEVIDE")
+PER_MEMORY=$(awk '{print int($1/1024)}' <<< "$USETO")
 MIN_SPARE=$(awk '{print int($1/($2/1024)*0.25)}' <<< "$PER_MEMORY $CHILD")
 MAX_SPARE=$(awk '{print int($1/($2/1024)*0.75)}' <<< "$PER_MEMORY $CHILD")
 START_SERVER=$(awk '{print int($1+($2-$1)/2)}' <<< "$MIN_SPARE $MAX_SPARE")
