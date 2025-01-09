@@ -13,7 +13,7 @@
 >> = php-fpm 세팅에서 사용할 메모리
 
 ### 설치 및 사용
-> ```bash
+> ```console 
 > ~]# cd /opt
 > ~]# git clone https://github.com/san0123/php-fpm-calculator
 > ~]# cd php-fpm-calculator
@@ -25,7 +25,7 @@
 > ```
 
 ### 예제 결과 값. (메모리 2GB / 1개 pool)
-> ```bash
+> ```erl 
 > ~]# ./phpfpm-calculator.sh 1
 > -----------------------------------------
 >           TOTAL   USED    BUFF    FREE
