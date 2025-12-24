@@ -1,0 +1,76 @@
+# Kiro 설정 폴더 (개인 설정 포함)
+.kiro/
+
+# 임시 파일
+*.tmp
+*.temp
+*.bak
+*.backup
+*~
+
+# 로그 파일
+*.log
+logs/
+
+# 테스트 파일
+test_*
+*_test.sh
+*.test
+
+# 개발 중 임시 스크립트
+1.sh
+temp.sh
+debug.sh
+
+# OS 생성 파일
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# 에디터 파일
+# Vim
+*.swp
+*.swo
+*~
+.viminfo
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# 개인 설정 파일
+config.local
+*.local
+personal_*
+
+# 백업 파일
+*.orig
+*.rej
+
+# 압축 파일
+*.zip
+*.tar.gz
+*.tar.bz2
+*.rar
+
+# 실행 결과 파일
+output.txt
+result.txt
+memory_info.txt
